@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<main class="types-list">
+<% for(type of types){%>
+    
+        <div class="select-type" style="background-color: #<%=type.color%>">
+            <a href="/type/<%= type.id%>">
+                <p class="link-types"><%=type.name%></p>
+            </a>
+        </div>
+    
+<%}%>
+
+
+</main>
+
+
+<%- include('partials/footer') %>

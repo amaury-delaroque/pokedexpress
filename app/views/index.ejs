@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<main class="main-list">
+<% for(pokemon of pokemons){%>
+<article class="main-pokemon">
+    <a href="/detail/<%= pokemon.numero%>">
+        <img class="main-pokemon-img" src="/img/<%=pokemon.numero%>.png" alt="image de <%=pokemon.nom%>">
+        <h1 class="main-pokemon-name">#<%=pokemon.numero%> <%=pokemon.nom%></h1>
+    </a>
+</article>
+<%}%>
+
+
+</main>
+
+
+<%- include('partials/footer') %>

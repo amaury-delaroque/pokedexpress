@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+    <main class="detail-list">
+		<h1 class="detail-tittle">Détails de <%=pokemon.nom%></h1>
+        <article class="detail-pokemon">
+			<div class="image-container">
+				<img class="main-pokemon-img" src="/img/<%=pokemon.numero%>.png" alt="image de <%=pokemon.nom%>">
+			</div>
+			<div class="text-container">
+				<h1 class="detail-pokemon-name">#<%=pokemon.numero%> <%=pokemon.nom%></h1>
+				<div class="type-flex">
+					<% for(type of pokemon.types){ %>
+						<a href="/type/<%= type.type_id%>">
+							<div style="background-color : #<%= type.color%>" class="type">
+								<span><%=type.name%></span>
+							</div>
+						</a>
+					<% }%>
+				</div>
+				<h2>Statistiques</h2>
+				<div class="statistiques">
+					<div class="stat-list">
+						<p class="stat-name">PV</p>
+						<p class="stat-value"><%= pokemon.pv%></p>
+						<progress class="progress-bar" value="<%=pokemon.pv%>" max="255"><%=pokemon.pv%></progress>
+					</div>
+					<div class="stat-list">
+						<p class="stat-name">Attaque</p>
+						<p class="stat-value"><%= pokemon.attaque%></p>
+						<progress value="<%=pokemon.attaque%>" max="255"><%=pokemon.attaque%></progress>
+					</div>
+					<div class="stat-list">
+						<p class="stat-name">Defense</p>
+						<p class="stat-value"><%= pokemon.defense%></p>
+						<progress value="<%=pokemon.defense%>" max="255"><%=pokemon.defense%></progress>
+					</div>
+					<div class="stat-list">
+						<p class="stat-name">Attaque Spé.</p>
+						<p class="stat-value"><%= pokemon.attaque_spe%></p>
+						<progress value="<%=pokemon.attaque_spe%>" max="255"><%=pokemon.attaque_spe%></progress>
+					</div>
+					<div class="stat-list">
+						<p class="stat-name">Defense Spé.</p>
+						<p class="stat-value"><%= pokemon.defense_spe%></p>
+						<progress value="<%=pokemon.defense_spe%>" max="255"><%=pokemon.defense_spe%></progress>
+					</div>
+					<div class="stat-list">
+						<p class="stat-name">Vitesse</p>
+						<p class="stat-value"><%= pokemon.vitesse%></p>
+						<progress value="<%=pokemon.vitesse%>" max="255"><%=pokemon.vitesse%></progress>
+					</div>
+				</div>
+			</div>
+
+
+        </article>
+		<a class="button-back" href="/">Revenir à la liste</a>
+
+
+    </main>
+
+
+<%- include('partials/footer') %>
